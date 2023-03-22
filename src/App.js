@@ -1,10 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalState from "./contexts/GloabalState";
+import { GlobalStyled } from "./GlobalStyled";
+import Router from "./router/Router";
 
 function App() {
+
+  const context = GlobalState()
+  
   return (
-    <div className="App">
-    </div>
+    <>
+    <GlobalStyled/>
+      <GlobalContext.Provider value={context} >
+      <Router/>
+      </GlobalContext.Provider>
+    </>
   );
 }
 
